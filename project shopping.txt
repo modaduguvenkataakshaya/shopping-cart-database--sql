@@ -1,0 +1,60 @@
+CREATE TABLE MALL(
+mall_ID numeric primary key,
+mall_name varchar(20) not null,
+mall_address varchar(20)
+); 
+INSERT INTO MALL VALUES(001,'PVP','Mg road');
+INSERT INTO MALL VALUES(002,'CHENNAI MALL','Eluru road');
+INSERT INTO MALL VALUES(003,'SUBHAMASTHU','Mahatma gandhi road');
+INSERT INTO MALL VALUES(004,'AAKRUTHI','Jammi chettu road');
+INSERT INTO MALL VALUES(005,'SOUTHINDIA','Becent road');
+SELECT * FROM MALL ;
+ 
+ CREATE TABLE BRANCH(
+mall_ID numeric,
+branch_ID numeric primary key,
+branch_name varchar(20) not null,
+branch_address varchar(20)); 
+INSERT INTO BRANCH VALUES(001,101,'vijayawada','Mg road');
+INSERT INTO BRANCH VALUES(002,102,'Hyderabad','Zainab complex');
+INSERT INTO BRANCH VALUES(003,103,'Ongole','Kurnool road');
+INSERT INTO BRANCH VALUES(004,104,'Guntur','Bhavanipuram');
+INSERT INTO BRANCH VALUES(005,105,'Banglore','Dodsworth Layout');
+SELECT * FROM BRANCH ;
+
+CREATE TABLE COLLECTIONS(
+collection_ID numeric primary key,
+branch_ID numeric,
+collections varchar(20) not null,
+category_type varchar(20) not null);
+INSERT INTO COLLECTIONS VALUES(201,101,'Kurtas','Ethical wear');
+INSERT INTO COLLECTIONS VALUES(202,102,'Sarees','Ethicalwear');
+INSERT INTO COLLECTIONS VALUES(203,103,'Tunics','Western wear');
+INSERT INTO COLLECTIONS VALUES(204,104,'Anarkalis','Ethical wear');
+INSERT INTO COLLECTIONS VALUES(205,105,'Pyjamas','Sleepwear');
+SELECT * FROM COLLECTIONS ;
+
+CREATE TABLE OFFERS(
+collection_ID numeric,
+offer_ID numeric primary key,
+offer_percent numeric,
+offer_type varchar(20) not null,
+original_amount numeric); 
+INSERT INTO OFFERS VALUES(201,301,70,'Big billion',1900);
+INSERT INTO OFFERS VALUES(202,302,67,'Anniversary',2000);
+INSERT INTO OFFERS VALUES(203,303,50,'Dussherra',1500);
+INSERT INTO OFFERS VALUES(204,304,40,'Independenceday',2500);
+INSERT INTO OFFERS VALUES(205,305,80,'Buyone getone',3000);
+SELECT * FROM OFFERS;
+
+CREATE TABLE CLIENT(
+collection_ID numeric,
+client_ID numeric primary key,
+name varchar(20) not null,
+client_address varchar(500) not null); 
+INSERT INTO CLIENT VALUES(201,401,'Ramesh','21,Gandhi Nagar');
+INSERT INTO CLIENT VALUES(202,402,'Ramu','16,Vijay Nagar');
+INSERT INTO CLIENT VALUES(203,403,'Sunitha','13,Geeta colony');
+INSERT INTO CLIENT VALUES(204,404,'Naveen','11, Savedh Nagar');
+INSERT INTO CLIENT VALUES(205,405,'Tarun','07,godha colony');
+SELECT * FROM CLIENT ;
